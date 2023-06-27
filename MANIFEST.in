@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include camp_report *.css
+recursive-include camp_report *.csv
+recursive-include camp_report *.html
+recursive-include camp_report *.ico
+recursive-include camp_report *.js
+recursive-include camp_report *.json
+recursive-include camp_report *.md
+recursive-include camp_report *.png
+recursive-include camp_report *.py
+recursive-include camp_report *.svg
+recursive-include camp_report *.txt
+recursive-exclude camp_report *.pyc
