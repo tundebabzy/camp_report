@@ -1,7 +1,9 @@
 import frappe
 from erpnext.stock.doctype.pick_list.pick_list import map_pl_locations, update_packed_item_details, \
     validate_item_locations
-from camp_report.overrides.sales_order import make_delivery_note
+from erpnext.selling.doctype.sales_order.sales_order import (
+	make_delivery_note as create_delivery_note_from_sales_order,
+)
 from itertools import groupby
 
 
@@ -23,7 +25,7 @@ def create_dn_with_so(sales_dict, pick_list):
     for customer in sales_dict:
         for so in sales_dict[customer]:
             delivery_note = None
-            delivery_note = make_delivery_note(so, delivery_note, skip_item_mapping=True)
+            delivery_note = create_delivery_note_from_sales_order(so, delivery_note, skip_item_mapping=True)
             break
         if delivery_note:
             # map all items of all sales orders of that customer
