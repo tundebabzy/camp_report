@@ -139,9 +139,9 @@ app_include_css = "camp_report.bundle.css"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "camp_report.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.stock.doctype.pick_list.pick_list.create_delivery_note": "camp_report.overrides.pick_list.create_delivery_note"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
