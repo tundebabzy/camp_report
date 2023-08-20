@@ -188,14 +188,7 @@ def get_columns(invoice_list, additional_table_columns):
 			"width": 80,
 		},
 		{"label": _("Owner"), "fieldname": "owner", "fieldtype": "Data", "width": 150},
-		{"label": _("Remarks"), "fieldname": "remarks", "fieldtype": "Data", "width": 150},
-		{
-			"label": _("Sales Order"),
-			"fieldname": "sales_order",
-			"fieldtype": "Link",
-			"options": "Sales Order",
-			"width": 100,
-		}
+		{"label": _("Remarks"), "fieldname": "remarks", "fieldtype": "Data", "width": 150}
 	]
 
 	income_accounts = []
