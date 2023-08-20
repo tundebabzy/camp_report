@@ -186,9 +186,7 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Project",
 			"width": 80,
-		},
-		{"label": _("Owner"), "fieldname": "owner", "fieldtype": "Data", "width": 150},
-		{"label": _("Remarks"), "fieldname": "remarks", "fieldtype": "Data", "width": 150}
+		}
 	]
 
 	income_accounts = []
