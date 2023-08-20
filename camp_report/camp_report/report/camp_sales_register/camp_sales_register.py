@@ -76,7 +76,6 @@ def _execute(filters, additional_table_columns=None, additional_query_columns=No
 				"delivery_note": ", ".join(delivery_note),
 				"cost_center": ", ".join(cost_center),
 				"warehouse": ", ".join(warehouse),
-				"currency": company_currency,
 			}
 		)
 
@@ -217,8 +216,7 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Warehouse",
 			"width": 100,
-		},
-		{"fieldname": "currency", "label": _("Currency"), "fieldtype": "Data", "width": 80},
+		}
 	]
 
 	income_accounts = []
