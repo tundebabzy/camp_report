@@ -209,13 +209,6 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Cost Center",
 			"width": 100,
-		},
-		{
-			"label": _("Warehouse"),
-			"fieldname": "warehouse",
-			"fieldtype": "Link",
-			"options": "Warehouse",
-			"width": 100,
 		}
 	]
 
