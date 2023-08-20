@@ -208,7 +208,7 @@ def get_columns():
 			"convertible": "qty",
 		},
 		{
-			"label": _("Shortage Qty"),
+			"label": _("Shortage"),
 			"fieldname": "shortage_qty",
 			"fieldtype": "Float",
 			"width": 100,
