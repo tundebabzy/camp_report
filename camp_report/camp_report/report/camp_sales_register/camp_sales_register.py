@@ -158,34 +158,6 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Customer Group",
 			"width": 120,
-		},
-		{
-			"label": _("Territory"),
-			"fieldname": "territory",
-			"fieldtype": "Link",
-			"options": "Territory",
-			"width": 80,
-		},
-		{"label": _("Tax Id"), "fieldname": "tax_id", "fieldtype": "Data", "width": 120},
-		{
-			"label": _("Receivable Account"),
-			"fieldname": "receivable_account",
-			"fieldtype": "Link",
-			"options": "Account",
-			"width": 80,
-		},
-		{
-			"label": _("Mode Of Payment"),
-			"fieldname": "mode_of_payment",
-			"fieldtype": "Data",
-			"width": 120,
-		},
-		{
-			"label": _("Project"),
-			"fieldname": "project",
-			"fieldtype": "Link",
-			"options": "Project",
-			"width": 80,
 		}
 	]
 
