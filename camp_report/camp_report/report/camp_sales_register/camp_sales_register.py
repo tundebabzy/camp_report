@@ -287,6 +287,9 @@ def get_conditions(filters):
 	if filters.get("customer") and "customer" not in accounting_dimensions_list:
 		conditions += " and customer = %(customer)s"
 
+	if filters.get("customer_group"):
+		conditions += " and customer_group = %(customer_group)s"
+
 	if filters.get("from_date"):
 		conditions += " and posting_date >= %(from_date)s"
 	if filters.get("to_date"):

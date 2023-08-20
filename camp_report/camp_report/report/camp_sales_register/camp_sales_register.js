@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Sales Register"] = {
+frappe.query_reports["Camp Sales Register"] = {
 	"filters": [
 		{
 			"fieldname":"from_date",
@@ -22,6 +22,12 @@ frappe.query_reports["Sales Register"] = {
 			"label": __("Customer"),
 			"fieldtype": "Link",
 			"options": "Customer"
+		},
+		{
+			"fieldname":"customer_group",
+			"label": __("Customer Group"),
+			"fieldtype": "Link",
+			"options": "Customer Group"
 		},
 		{
 			"fieldname":"company",
