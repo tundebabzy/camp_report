@@ -137,7 +137,7 @@ def get_columns(invoice_list, additional_table_columns):
 			"options": "Sales Invoice",
 			"width": 120,
 		},
-		{"label": _("Posting Date"), "fieldname": "posting_date", "fieldtype": "Date", "width": 80},
+		{"label": _("Invoice Date"), "fieldname": "posting_date", "fieldtype": "Date", "width": 80},
 		{
 			"label": _("Customer"),
 			"fieldname": "customer",
