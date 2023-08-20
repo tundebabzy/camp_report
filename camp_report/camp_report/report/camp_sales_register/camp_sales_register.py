@@ -53,6 +53,7 @@ def _execute(filters, additional_table_columns=None, additional_query_columns=No
 
 		row = {
 			"invoice": inv.name,
+			"invoice_name": inv.invoice_name,
 			"posting_date": inv.posting_date,
 			"customer": inv.customer,
 			"customer_name": inv.customer_name,
@@ -136,6 +137,11 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Sales Invoice",
 			"width": 120,
+		},
+		{
+			"label": _("Invoice Name"),
+			"fieldname": "invoice_name",
+			"fieldtype": "Data",
 		},
 		{"label": _("Invoice Date"), "fieldname": "posting_date", "fieldtype": "Date", "width": 80},
 		{
@@ -334,7 +340,7 @@ def get_invoices(filters, additional_query_columns):
 	conditions = get_conditions(filters)
 	return frappe.db.sql(
 		"""
-		select name, posting_date, debit_to, project, customer,
+		select name, invoice_name, posting_date, debit_to, project, customer,
 		customer_name, owner, remarks, territory, tax_id, customer_group,
 		base_net_total, base_grand_total,
 		is_internal_customer, represents_company, company {0}
