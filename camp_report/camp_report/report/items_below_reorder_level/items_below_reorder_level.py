@@ -64,7 +64,7 @@ def execute(filters=None):
 			data.append(
 				[
 					item.name,
-					item.item_name,
+					# item.item_name,
 					item.description,
 					item.item_group,
 					bin.warehouse,
@@ -101,7 +101,6 @@ def get_columns():
 			"options": "Item",
 			"width": 140,
 		},
-		{"label": _("Item Name"), "fieldname": "item_name", "width": 100},
 		{"label": _("Description"), "fieldname": "description", "width": 200},
 		{
 			"label": _("Item Group"),
