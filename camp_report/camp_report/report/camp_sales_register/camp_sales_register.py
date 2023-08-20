@@ -202,13 +202,6 @@ def get_columns(invoice_list, additional_table_columns):
 			"fieldtype": "Link",
 			"options": "Delivery Note",
 			"width": 100,
-		},
-		{
-			"label": _("Cost Center"),
-			"fieldname": "cost_center",
-			"fieldtype": "Link",
-			"options": "Cost Center",
-			"width": 100,
 		}
 	]
 
