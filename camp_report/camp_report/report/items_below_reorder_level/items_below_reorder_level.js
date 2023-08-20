@@ -40,12 +40,6 @@ frappe.query_reports["Items Below Reorder Level"] = {
 			"label": __("Item Group"),
 			"fieldtype": "Link",
 			"options": "Item Group"
-		},
-		{
-			"fieldname":"include_uom",
-			"label": __("Include UOM"),
-			"fieldtype": "Link",
-			"options": "UOM"
 		}
 	]
 }
