@@ -67,7 +67,6 @@ def execute(filters=None):
 					item.item_name,
 					item.description,
 					item.item_group,
-					item.brand,
 					bin.warehouse,
 					item.stock_uom,
 					bin.actual_qty,
@@ -109,13 +108,6 @@ def get_columns():
 			"fieldname": "item_group",
 			"fieldtype": "Link",
 			"options": "Item Group",
-			"width": 100,
-		},
-		{
-			"label": _("Brand"),
-			"fieldname": "brand",
-			"fieldtype": "Link",
-			"options": "Brand",
 			"width": 100,
 		},
 		{
