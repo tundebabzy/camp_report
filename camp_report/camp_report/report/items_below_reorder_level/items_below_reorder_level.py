@@ -66,9 +66,7 @@ def execute(filters=None):
 					item.name,
 					# item.item_name,
 					item.description,
-					item.item_group,
-					bin.warehouse,
-					item.stock_uom,
+					# bin.warehouse,
 					bin.actual_qty,
 					# bin.planned_qty,
 					# bin.indented_qty,
@@ -78,7 +76,7 @@ def execute(filters=None):
 					# bin.reserved_qty_for_production_plan,
 					# bin.reserved_qty_for_sub_contract,
 					# reserved_qty_for_pos,
-					bin.projected_qty,
+					# bin.projected_qty,
 					re_order_level,
 					re_order_qty,
 					shortage_qty,
@@ -102,27 +100,13 @@ def get_columns():
 			"width": 140,
 		},
 		{"label": _("Description"), "fieldname": "description", "width": 200},
-		{
-			"label": _("Item Group"),
-			"fieldname": "item_group",
-			"fieldtype": "Link",
-			"options": "Item Group",
-			"width": 100,
-		},
-		{
-			"label": _("Warehouse"),
-			"fieldname": "warehouse",
-			"fieldtype": "Link",
-			"options": "Warehouse",
-			"width": 120,
-		},
-		{
-			"label": _("UOM"),
-			"fieldname": "stock_uom",
-			"fieldtype": "Link",
-			"options": "UOM",
-			"width": 100,
-		},
+		# {
+		# 	"label": _("Warehouse"),
+		# 	"fieldname": "warehouse",
+		# 	"fieldtype": "Link",
+		# 	"options": "Warehouse",
+		# 	"width": 120,
+		# },
 		{
 			"label": _("Actual Qty"),
 			"fieldname": "actual_qty",
@@ -186,13 +170,13 @@ def get_columns():
 		# 	"width": 100,
 		# 	"convertible": "qty",
 		# },
-		{
-			"label": _("Projected Qty"),
-			"fieldname": "projected_qty",
-			"fieldtype": "Float",
-			"width": 100,
-			"convertible": "qty",
-		},
+		# {
+		# 	"label": _("Projected Qty"),
+		# 	"fieldname": "projected_qty",
+		# 	"fieldtype": "Float",
+		# 	"width": 100,
+		# 	"convertible": "qty",
+		# },
 		{
 			"label": _("Reorder Level"),
 			"fieldname": "re_order_level",
@@ -272,7 +256,7 @@ def get_item_map(item_code, include_uom):
 
 	query = (
 		frappe.qb.from_(item)
-		.select(item.name, item.item_name, item.description, item.item_group, item.brand, item.stock_uom)
+		.select(item.name, item.item_name, item.description, item.item_group, item.brand)
 		.where(
 			(item.is_stock_item == 1)
 			& (item.disabled == 0)

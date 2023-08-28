@@ -12,19 +12,6 @@ frappe.query_reports["Items Below Reorder Level"] = {
 			"default": frappe.defaults.get_user_default("Company")
 		},
 		{
-			"fieldname":"warehouse",
-			"label": __("Warehouse"),
-			"fieldtype": "Link",
-			"options": "Warehouse",
-			"get_query": () => {
-				return {
-					filters: {
-						company: frappe.query_report.get_filter_value('company')
-					}
-				}
-			}
-		},
-		{
 			"fieldname":"item_code",
 			"label": __("Item"),
 			"fieldtype": "Link",
@@ -34,12 +21,6 @@ frappe.query_reports["Items Below Reorder Level"] = {
 					query: "erpnext.controllers.queries.item_query"
 				}
 			}
-		},
-		{
-			"fieldname":"item_group",
-			"label": __("Item Group"),
-			"fieldtype": "Link",
-			"options": "Item Group"
 		}
 	]
 }
