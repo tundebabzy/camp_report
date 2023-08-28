@@ -178,14 +178,14 @@ def get_columns():
 		# 	"convertible": "qty",
 		# },
 		{
-			"label": _("Reorder Level"),
+			"label": _("Min. Stock"),
 			"fieldname": "re_order_level",
 			"fieldtype": "Float",
 			"width": 100,
 			"convertible": "qty",
 		},
 		{
-			"label": _("Reorder Qty"),
+			"label": _("1 Year Average"),
 			"fieldname": "re_order_qty",
 			"fieldtype": "Float",
 			"width": 100,
