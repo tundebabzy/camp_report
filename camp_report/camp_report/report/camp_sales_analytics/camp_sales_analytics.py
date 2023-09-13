@@ -139,7 +139,7 @@ class Analytics(object):
 
 	def get_sales_transactions_based_on_customers_or_suppliers(self):
 		if self.filters["value_quantity"] == "Value":
-			value_field = "base_net_total as value_field"
+			value_field = "base_grand_total as value_field"
 		else:
 			value_field = "total_qty as value_field"
 
@@ -190,7 +190,7 @@ class Analytics(object):
 
 	def get_sales_transactions_based_on_customer_or_territory_group(self):
 		if self.filters["value_quantity"] == "Value":
-			value_field = "base_net_total as value_field"
+			value_field = "base_grand_total as value_field"
 		else:
 			value_field = "total_qty as value_field"
 
@@ -236,7 +236,7 @@ class Analytics(object):
 
 	def get_sales_transactions_based_on_project(self):
 		if self.filters["value_quantity"] == "Value":
-			value_field = "base_net_total as value_field"
+			value_field = "base_grand_total as value_field"
 		else:
 			value_field = "total_qty as value_field"
 
