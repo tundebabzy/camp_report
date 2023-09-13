@@ -69,7 +69,8 @@ def execute(filters=None):
 				bin.actual_qty,
 				bin.reserved_qty,
 				bin.projected_qty,
-				item.safety_stock
+				item.safety_stock,
+				item["1_year_average"]
 			]
 		)
 
@@ -123,6 +124,11 @@ def get_columns():
 			"fieldname": "safety_stock",
 			"fieldtype": "Float",
 		},
+		{
+			"label": _("1 Year Average"),
+			"fieldname": "1_year_average",
+			"fieldtype": "Float"
+		}
 	]
 
 
@@ -181,7 +187,7 @@ def get_item_map(item_code, include_uom):
 
 	query = (
 		frappe.qb.from_(item)
-		.select(item.name, item.item_name, item.description, item.item_group, item.brand, item.stock_uom, item.safety_stock)
+		.select(item.name, item.item_name, item.description, item.item_group, item.brand, item.stock_uom, item.safety_stock, item["1_year_average"])
 		.where(
 			(item.is_stock_item == 1)
 			& (item.disabled == 0)
