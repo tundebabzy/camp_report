@@ -26,15 +26,8 @@ def get_columns(filters):
 			"options": "Item",
 			# "width": 120,
 		},
-		{"label": _("Item Name"), "fieldtype": "Data", "fieldname": "item_name", "width": 140},
-		{"label": _("Picked Quantity"), "fieldtype": "Float", "fieldname": "picked_qty", "width": 150},
-		{
-			"label": _("Pick List"),
-			"fieldtype": "Link",
-			"fieldname": "parent",
-			"options": "Pick List",
-			# "width": 100,
-		},
+		{"label": _("Item Name"), "fieldtype": "Data", "fieldname": "item_name", "width": 240},
+		{"label": _("Quantity"), "fieldtype": "Float", "fieldname": "qty"},
 		{
 			"label": _("Date"),
 			"fieldtype": "Date",
@@ -46,7 +39,7 @@ def get_columns(filters):
 			"fieldtype": "Link",
 			"fieldname": "warehouse",
 			"options": "Warehouse",
-			# "width": 100,
+			"width": 150,
 		},
 	]
 
@@ -58,8 +51,8 @@ def get_data(filters):
 	if filters.get("item_code"):
 		condition = f"{condition} and item_code = '{filters.item_code}'"
 	return frappe.db.sql(
-		f"""select name, parent, item_code, item_name, description, sum(picked_qty) as picked_qty, 
-		modified, warehouse from `tabPick List Item`
+		f"""select name, item_code, item_name, description, sum(qty) as qty, 
+		modified, warehouse from `tabDelivery Note Item`
 		{condition} group by item_code""", as_dict=1
 	)
 
