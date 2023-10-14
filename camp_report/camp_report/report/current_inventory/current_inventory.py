@@ -61,6 +61,9 @@ def execute(filters=None):
 		if reserved_qty_for_pos:
 			bin.projected_qty -= reserved_qty_for_pos
 
+		if filters.hide and bin.projected_qty == 0:
+			continue
+
 		data.append(
 			[
 				item.name,

@@ -51,6 +51,11 @@ frappe.query_reports["Current Inventory"] = {
 			"label": __("Include UOM"),
 			"fieldtype": "Link",
 			"options": "UOM"
+		},
+		{
+			"fieldname": "hide",
+			"label": __("Hide Zero Qty Warehouse"),
+			"fieldtype": "Check"
 		}
 	]
 }
