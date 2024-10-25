@@ -61,7 +61,7 @@ def execute(filters=None):
 		if reserved_qty_for_pos:
 			bin.projected_qty -= reserved_qty_for_pos
 
-		if filters.hide and bin.projected_qty == 0:
+		if filters.hide and bin.warehouse != item.default_warehouse and bin.projected_qty == 0:
 			continue
 
 		data.append(
@@ -73,7 +73,8 @@ def execute(filters=None):
 				bin.reserved_qty,
 				bin.projected_qty,
 				item.safety_stock,
-				item["1_year_average"]
+				flt(item["1_year_average"]),
+				item.default_warehouse
 			]
 		)
 
@@ -227,5 +228,18 @@ def get_item_map(item_code, include_uom):
 	for item in items:
 		item["reorder_levels"] = reorder_levels.get(item.name) or []
 		item_map[item.name] = item
+
+	returned_items = []
+	for item_name in item_map.keys():
+		returned_items.append(item_name)
+
+	item_defaults = frappe.get_list(
+		"Item Default", 
+		filters={"parent": ["in", returned_items]}, 
+		fields=["parent", "default_warehouse"]
+	)
+
+	for default in item_defaults:
+		item_map.get(default.parent)["default_warehouse"] = default.default_warehouse
 
 	return item_map
