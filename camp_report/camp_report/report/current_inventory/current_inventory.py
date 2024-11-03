@@ -233,7 +233,7 @@ def get_item_map(item_code, include_uom):
 	for item_name in item_map.keys():
 		returned_items.append(item_name)
 
-	item_defaults = frappe.get_list(
+	item_defaults = frappe.get_all(
 		"Item Default", 
 		filters={"parent": ["in", returned_items]}, 
 		fields=["parent", "default_warehouse"]
